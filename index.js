@@ -8,6 +8,7 @@ const {
   ChainId,
   Percent,
   Native,
+  ERC20Token,
 } = require("@pancakeswap/sdk");
 const {
   SmartRouter,
@@ -111,7 +112,7 @@ const provider = hardhatDev.ethers.provider;
 
 const getAssetBalance = async (asset) => {
   const assetContract = new hardhatDev.ethers.Contract(
-    bscTokens[asset.internalSymbol].address,
+    bscTokens[asset.internalSymbol]?.address || asset.contractAddress,
     bep20Abi,
     provider
   );
@@ -123,7 +124,20 @@ const getAssetBalance = async (asset) => {
   );
 };
 
+const getCustomERC20Token = (asset) => {
+  return new ERC20Token(
+    asset.chainId,
+    asset.contractAddress,
+    asset.decimals,
+    asset.internalSymbol,
+    asset.internalName,
+    asset.projectLink
+  );
+};
+
 const main = async () => {
+  //console.log(bscTokens);
+  //return;
   //DEVELOPMENT
   console.log("================= BEFORE SWAP");
   const signer = await hardhatDev.ethers.getImpersonatedSigner(SIGNER_ADDRESS);
@@ -171,7 +185,8 @@ const main = async () => {
           assetsToBuy.map((asset, i) => {
             //loop through each asset to get respective swap pools,
             //then best possible trade from those pools
-            const swapTo = bscTokens[asset.internalSymbol];
+            const swapTo =
+              bscTokens[asset.internalSymbol] || getCustomERC20Token(asset);
             getPoolsForSwap(swapTo)
               .then(([v2Pools, v3Pools]) => {
                 const pools = [...v2Pools, ...v3Pools];
@@ -204,7 +219,7 @@ const main = async () => {
                       trade,
                       {
                         recipient: address,
-                        //REVISIT - consider setting slippage on individual basis 
+                        //REVISIT - consider setting slippage on individual basis
                         slippageTolerance: new Percent(2),
                       }
                     );
@@ -238,7 +253,13 @@ const main = async () => {
                           //display balances after swaps are done
                           console.log("\n");
                           console.log("================= AFTER SWAP");
-                          //Recursivel
+                          //Recursively re-try executing failed TXs till array ie empty
+                          //increase slippage as each stage as that's likely the primary cause
+                          //also set max number of tries. Refund if max tries fail to resolve issue
+
+                          //Do diff of usdtToSpend and what's left after all TXs successfully
+                          //executed in case some chnage is left due to decimal weightings.
+                          //Send balance to Mtonyo's private? USDT tresury
                           console.log("Failed TXs:", failedTX);
                           console.log("\n");
                           signer.getBalance().then((balance) => {

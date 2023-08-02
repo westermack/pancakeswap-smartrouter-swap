@@ -3,55 +3,114 @@
     "id": 1,
     "name": "Bitcoin",
     "internalName": "Binance BTC",
-    "chainId": 1,
+    "chainId": 56,
     "symbol": "BTC",
     "internalSymbol": "btcb",
     "decimals": 18,
     "address": "0x8E4b2E6f25C80Cf28Bc33B076471aE8904AE7ed6",
-    "weight": 0.2
+    "weight": 0.1
   },
   {
     "id": 2,
     "name": "Ethereum",
     "internalName": "Binance-Peg Ethereum Token",
-    "chainId": 1,
+    "chainId": 56,
     "symbol": "ETH",
     "internalSymbol": "eth",
     "decimals": 18,
     "address": "0x85Ad518eB6f17D28f902A745A6Decb7a983fC4Ba",
-    "weight": 0.2
+    "weight": 0.1
   },
   {
     "id": 3,
     "name": "BNB",
     "internalName": "BNB",
-    "chainId": 1,
+    "chainId": 56,
     "symbol": "BNB",
     "internalSymbol": "bnb",
     "decimals": 18,
     "address": "0xEdDEF4E6843963aE44e579c69B70D05d87E6beA3",
-    "weight": 0.2
+    "weight": 0.1
   },
   {
     "id": 4,
     "name": "Ripple",
     "internalName": "Binance-Peg XRP Token'",
-    "chainId": 1,
+    "chainId": 56,
     "symbol": "XRP",
     "internalSymbol": "xrp",
     "decimals": 18,
     "address": "0x8a670a72A929d488BFB4657fb424aBef02F6f7b4",
-    "weight": 0.2
+    "weight": 0.1
   },
   {
     "id": 5,
     "name": "Cardano",
     "internalName": "Binance-Peg Cardano Token",
-    "chainId": 1,
+    "chainId": 56,
     "symbol": "ADA",
     "internalSymbol": "ada",
     "decimals": 18,
     "address": "0x290C7368674181Bd0992F79a2Eaf045A95170C00",
-    "weight": 0.2
+    "weight": 0.1
+  },
+  {
+    "id": 6,
+    "name": "Litecoin",
+    "internalName": "Binance-Peg Litecoin Token",
+    "chainId": 56,
+    "symbol": "LTC",
+    "internalSymbol": "ltc",
+    "decimals": 18,
+    "address": "0x92B50B04Ecf9755588E50272Eaa99aE54d0c52cE",
+    "weight": 0.1
+  },
+  {
+    "id": 7,
+    "name": "Tron",
+    "internalName": "TRON Token",
+    "chainId": 56,
+    "symbol": "TRX",
+    "internalSymbol": "trx",
+    "decimals": 18,
+    "address": "0x265e19EA3C6C7889D48D5F9e233B5e6970f14694",
+    "weight": 0.1
+  },
+  {
+    "id": 8,
+    "name": "Solana",
+    "internalName": "Solana",
+    "chainId": 56,
+    "symbol": "SOL",
+    "internalSymbol": "sol",
+    "decimals": 18,
+    "address": "0x97441E32AE55342653d88cF8Cee1F6C348e78341",
+    "contractAddress": "0x570A5D26f7765Ecb712C0924E4De545B89fD43dF",
+    "projectLink": "https://solana.com/",
+    "weight": 0.1
+  },
+  {
+    "id": 9,
+    "name": "Polkadot",
+    "internalName": "Binance-Peg Polkadot Token",
+    "chainId": 56,
+    "symbol": "DOT",
+    "internalSymbol": "dot",
+    "decimals": 18,
+    "address": "0x539Fad66da2985AB906B9Ba62dB9506aA310F01B",
+    "weight": 0.1
+  },
+  {
+    "id": 10,
+    "name": "Polygon",
+    "internalName": "Matic Token",
+    "chainId": 56,
+    "symbol": "MATIC",
+    "internalSymbol": "MATIC",
+    "decimals": 18,
+    "address": "0x2186B6ee50b980C15F711E12b3A59e0dbAE83AE6",
+    "contractAddress": "0xCC42724C6683B7E57334c4E856f4c9965ED682bD",
+    "projectLink": "https://polygon.technology/",
+    "weight": 0.1
   }
 ]
