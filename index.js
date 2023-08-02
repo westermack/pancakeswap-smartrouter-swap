@@ -196,8 +196,8 @@ const main = async () => {
                   TradeType.EXACT_INPUT,
                   {
                     gasPriceWei: () => client.getGasPrice(),
-                    maxHops: 2,
-                    maxSplits: 2,
+                    maxHops: 1,
+                    maxSplits: 1,
                     poolProvider: SmartRouter.createStaticPoolProvider(pools),
                     quoteProvider,
                     quoterOptimization: true,
@@ -238,7 +238,7 @@ const main = async () => {
                         successfulTX.push(asset);
                       })
                       .catch((error) => {
-                        console.log(error);
+                        //console.log(error);
                         //count as failed TX and include in array
                         console.log("\n");
                         console.log(
