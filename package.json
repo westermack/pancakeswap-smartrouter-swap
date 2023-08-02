@@ -1,0 +1,30 @@
+{
+  "name": "pancakeswap-smartrouter-swap",
+  "author": "Westermack W Batanyita <westermack@gmail.com>",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "@pancakeswap/sdk": "^5.2.1",
+    "@pancakeswap/smart-router": "^4.3.1",
+    "@pancakeswap/tokens": "^0.2.1",
+    "dotenv": "^16.3.1",
+    "graphql-request": "^6.1.0",
+    "node-fetch": "2",
+    "viem": "^1.4.2"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^3.0.4",
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@nomiclabs/hardhat-waffle": "^2.0.6",
+    "@types/sinon-chai": "^3.2.3",
+    "ethereum-waffle": "^3.0.0",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.17.1"
+  }
+}
