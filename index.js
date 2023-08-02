@@ -32,69 +32,11 @@ const { privateKeyToAccount, generatePrivateKey } = require("viem/accounts");
 const { GraphQLClient } = require("graphql-request");
 const { bscTokens } = require("@pancakeswap/tokens");
 const bep20Abi = require("./abis/bep20.json");
+const assetsToBuy = require("./data/assets.json");
 
 const SIGNER_ADDRESS = "0xe2fc31F816A9b94326492132018C3aEcC4a93aE1";
 const SIGNER_SECRET = "";
 const BSC_RPC_URL = "";
-
-const assetsToBuy = [
-  {
-    id: 1,
-    name: "Bitcoin",
-    internalName: "Binance BTC",
-    chainId: 1, //Decide what this means
-    symbol: "BTC",
-    internalSymbol: "btcb",
-    decimals: 18,
-    address: "0x8E4b2E6f25C80Cf28Bc33B076471aE8904AE7ed6",
-    weight: 0.2,
-    //contractAddress: "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
-  },
-  {
-    id: 2,
-    name: "Ethereum",
-    internalName: "Binance-Peg Ethereum Token",
-    chainId: 1,
-    symbol: "ETH",
-    internalSymbol: "eth",
-    decimals: 18,
-    address: "0x85Ad518eB6f17D28f902A745A6Decb7a983fC4Ba",
-    weight: 0.2,
-  },
-  {
-    id: 3,
-    name: "BNB",
-    internalName: "BNB",
-    chainId: 1,
-    symbol: "BNB",
-    internalSymbol: "bnb",
-    decimals: 18,
-    address: "0xEdDEF4E6843963aE44e579c69B70D05d87E6beA3",
-    weight: 0.2,
-  },
-  {
-    id: 4,
-    name: "Ripple",
-    internalName: "Binance-Peg XRP Token'",
-    chainId: 1,
-    symbol: "XRP",
-    internalSymbol: "xrp",
-    decimals: 18,
-    address: "0x8a670a72A929d488BFB4657fb424aBef02F6f7b4",
-    weight: 0.2,
-  },
-  {
-    id: 5,
-    name: "Cardano",
-    internalName: "Binance-Peg Cardano Token",
-    chainId: 1,
-    symbol: "ADA",
-    internalSymbol: "ada",
-    decimals: 18,
-    address: "0x290C7368674181Bd0992F79a2Eaf045A95170C00",
-    weight: 0.2,
-  },
-];
 
 const numAssetsToBuy = assetsToBuy.length;
 

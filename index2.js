@@ -29,58 +29,11 @@ import { privateKeyToAccount, generatePrivateKey } from "viem/accounts";
 import { GraphQLClient } from "graphql-request";
 import { bscTokens } from "@pancakeswap/tokens";
 import bep20Abi from "./abis/bep20.json";
+import assetsToBuy from "./data/assets.json";
 
 const SIGNER_ADDRESS = "0xe2fc31F816A9b94326492132018C3aEcC4a93aE1";
 const SIGNER_SECRET = "";
 const BSC_RPC_URL = "";
-
-const assetsToBuy = [
-  {
-    id: 1,
-    name: "Bitcoin",
-    imternalName: "Binance BTC",
-    chainId: 1, //Decide what this means
-    symbol: "BTC",
-    internalSymbol: "btcb",
-    decimals: 18,
-    address: "0x8E4b2E6f25C80Cf28Bc33B076471aE8904AE7ed6",
-    weight: 0.33,
-    //contractAddress: "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
-  },
-  {
-    id: 2,
-    name: "Ethereum",
-    chainId: 1,
-    symbol: "ETH",
-    internalSymbol: "eth",
-    decimals: 18,
-    address: "0x85Ad518eB6f17D28f902A745A6Decb7a983fC4Ba",
-    weight: 0.33,
-    //contractAddress: "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
-  },
-  // {
-  //   id: 3,
-  //   chainId:1,
-  //   name:"BNB",
-  //   symbol: "BNB",
-  //   internalSymbol: "bnb",
-  //   decimals:18,
-  //   address: "0xEdDEF4E6843963aE44e579c69B70D05d87E6beA3",
-  //   weight: 0.25,
-  //   //contractAddress: "",
-  // },
-  {
-    id: 4,
-    chainId: 1,
-    name: "Ripple",
-    symbol: "XRP",
-    internalSymbol: "xrp",
-    decimals: 18,
-    address: "0x8a670a72A929d488BFB4657fb424aBef02F6f7b4",
-    weight: 0.33,
-    //contractAddress: "0x1D2F0da169ceB9fC7B3144628dB156f3F6c60dBE",
-  },
-];
 
 const numAssetsToBuy = assetsToBuy.length;
 
