@@ -262,7 +262,8 @@ const main = async () => {
                       trade,
                       {
                         recipient: address,
-                        slippageTolerance: new Percent(1),
+                        //REVISIT - consider setting slippage on individual basis 
+                        slippageTolerance: new Percent(2),
                       }
                     );
 
@@ -295,6 +296,7 @@ const main = async () => {
                           //display balances after swaps are done
                           console.log("\n");
                           console.log("================= AFTER SWAP");
+                          //Recursivel
                           console.log("Failed TXs:", failedTX);
                           console.log("\n");
                           signer.getBalance().then((balance) => {
