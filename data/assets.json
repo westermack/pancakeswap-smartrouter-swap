@@ -35,7 +35,7 @@
   {
     "id": 4,
     "name": "Ripple",
-    "internalName": "Binance-Peg XRP Token'",
+    "internalName": "Binance-Peg XRP Token",
     "chainId": 56,
     "symbol": "XRP",
     "internalSymbol": "xrp",
@@ -106,7 +106,7 @@
     "internalName": "Matic Token",
     "chainId": 56,
     "symbol": "MATIC",
-    "internalSymbol": "MATIC",
+    "internalSymbol": "matic",
     "decimals": 18,
     "address": "0x2186B6ee50b980C15F711E12b3A59e0dbAE83AE6",
     "contractAddress": "0xCC42724C6683B7E57334c4E856f4c9965ED682bD",

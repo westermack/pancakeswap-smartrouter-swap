@@ -193,8 +193,8 @@ const main = async () => {
                   TradeType.EXACT_INPUT,
                   {
                     gasPriceWei: () => client.getGasPrice(),
-                    maxHops: 1,
-                    maxSplits: 1,
+                    maxHops: 2,
+                    maxSplits: 2,
                     poolProvider: SmartRouter.createStaticPoolProvider(pools),
                     quoteProvider,
                     quoterOptimization: true,
